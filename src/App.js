@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {useSelector} from "react-redux"
+import {Registration} from "./component/RegistrationComponent/Registration";
+import {Login} from "./component/LoginComponent/Login";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const products = useSelector(state => state.products)
+    const users = useSelector(state => state.users)
+
+    return (
+        <div className="App">
+            <Registration/>
+            <Login/>
+            {
+                products.map(products => <div key={products.id}>{products.name} - {products.surname}</div>)
+            }
+
+            {
+                users.map(user => <div key={user.id}>{user.name} - {user.surname}</div>)
+            }
+        </div>
+    );
 }
 
 export default App;
