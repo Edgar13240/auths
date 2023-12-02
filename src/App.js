@@ -1,26 +1,44 @@
-import './App.css';
-import {useSelector} from "react-redux"
-import {Registration} from "./component/RegistrationComponent/Registration";
-import {Login} from "./component/LoginComponent/Login";
+import React from 'react';
+// import {useSelector } from 'react-redux';
+import LoginForm from "./component/LoginComponent/LoginForm";
+import RegistrationForm from "./component/RegistrationComponent/RegistrationForm";
+import UserPage from "./component/UserComponent/UserComponent";
+import './App.css'
 
-function App() {
+// const App = () => {
+//
+//     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+//
+//     return (
+//             <div className={"App"} >
+//                 {!isAuthenticated ? (
+//                     <>
+//                         <h1>Login</h1>
+//                         <LoginForm />
+//                         <h1>Registration</h1>
+//                         <RegistrationForm />
+//                     </>
+//                 ) : <UserPage />
+//                 }
+//             </div>
+//     );
+// };
+//
+// export default App;
+//
 
-    const products = useSelector(state => state.products)
-    const users = useSelector(state => state.users)
-
+const App = () => {
     return (
-        <div className="App">
-            <Registration/>
-            <Login/>
-            {
-                products.map(products => <div key={products.id}>{products.name} - {products.surname}</div>)
-            }
-
-            {
-                users.map(user => <div key={user.id}>{user.name} - {user.surname}</div>)
-            }
-        </div>
+            <div>
+                <h1>Registration</h1>
+                <RegistrationForm />
+                <hr />
+                <h1>Login</h1>
+                <LoginForm />
+                <hr />
+                <UserPage />
+            </div>
     );
-}
+};
 
 export default App;

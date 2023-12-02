@@ -1,14 +1,6 @@
-.Registration__main{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-
-.main__filed{
-    padding: 5px 10px;
-}
-
-.Registration__snap{
-    margin: 10px 0;
-}
+/*.Registration__main{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 20px;*/
+/*    align-items: center;*/
+/*}*/
